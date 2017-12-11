@@ -1,0 +1,25 @@
+.header {
+  &__title,
+  p {
+    margin-bottom: .5rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  @media screen and (min-width: $breakpoint-2) {
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+}

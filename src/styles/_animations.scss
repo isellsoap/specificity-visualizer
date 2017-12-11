@@ -1,0 +1,26 @@
+@keyframes point-down {
+  from,
+  60% {
+    transform: translateY(0);
+  }
+
+  70% {
+    transform: translateY(-2px);
+  }
+
+  75% {
+    transform: translateY(4px);
+  }
+
+  90% {
+    transform: translateY(-2px);
+  }
+
+  95% {
+    transform: translateY(4px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

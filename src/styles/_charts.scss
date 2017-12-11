@@ -1,0 +1,43 @@
+.charts {
+  &_hidden {
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__main-scatter-plot,
+  &__specificity-groups-column,
+  &__specificity-groups-pie {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  &__main-scatter-plot {
+    height: 80vh;
+  }
+
+  @media screen and (min-width: $breakpoint-3) {
+    &__specificity-groups-column {
+      padding-right: .5rem;
+      width: 50%;
+    }
+
+    &__specificity-groups-pie {
+      padding-left: .5rem;
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-4) {
+    &__specificity-groups-column {
+      width: percentage(2 / 3);
+    }
+
+    &__specificity-groups-pie {
+      width: percentage(1 / 3);
+    }
+  }
+}
