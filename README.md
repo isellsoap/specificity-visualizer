@@ -10,7 +10,7 @@ Website: [isellsoap.github.io/specificity-visualizer](https://isellsoap.github.i
 - Clone the repository with `git clone https://github.com/isellsoap/specificity-visualizer.git`.
 - Go into the folder with `cd specificity-visualizer` and install the dependencies with `npm install`.
 - Build all the assets with `npm run build`.
-- This will create the `index.html` in the root folder which you can now open in your browser.
+- This will create the `index.html` in the `dist` folder which you can now open in your browser.
 
 ## License
 
