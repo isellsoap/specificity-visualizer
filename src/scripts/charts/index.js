@@ -44,7 +44,9 @@ export function renderMainChart(specificities, yAxisCategories, dataSeries) {
       labels: {
         align: 'right'
       },
-      tickmarkPlacement: 'on'
+      tickmarkPlacement: 'on',
+      endOnTick: false,
+      maxPadding: 0
     },
     series: [
       {
