@@ -26,13 +26,8 @@ const elementTextarea = document.querySelector(selectorTextarea);
 const elementErrorMessage = document.querySelector(selectorErrorMessage);
 const elementCharts = document.querySelector(selectorCharts);
 
-const mainChartDataSeries = {
-  idCategory: [],
-  classCategory: [],
-  elementCategory: []
-};
-const specificityUsages = {};
-
+let mainChartDataSeries;
+let specificityUsages;
 let specificityUsagesDataSeries;
 let textareaContent;
 let ast;
@@ -64,6 +59,14 @@ const getSortedKeysByValue = (obj) => Object.keys(obj).sort((keyA, keyB) => -(ob
 // main form submit
 elementForm.addEventListener('submit', (event) => {
   event.preventDefault();
+
+  // reset variables
+  mainChartDataSeries = {
+    idCategory: [],
+    classCategory: [],
+    elementCategory: []
+  };
+  specificityUsages = {};
 
   textareaContent = elementTextarea.value;
 
