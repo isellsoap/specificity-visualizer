@@ -78,10 +78,11 @@ module.exports = (env) => {
       new HtmlPlugin({
         inject: false,
         template: './src/markup/index.html.ejs',
-        filename: '../dist/index.html',
+        filename: 'index.html',
         minify: {
           minifyJS: isProductionBuild
-        }
+        },
+        favicon: 'src/images/favicon.ico'
       })
     ],
     resolve: {
