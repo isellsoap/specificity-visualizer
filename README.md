@@ -46,7 +46,7 @@ or watch the files continuously with
 
 ## Download
 
-You can also simply [download the latest version of the website as a ZIP file](https://github.com/isellsoap/specificity-visualizer/archive/gh-pages.zip).
+You can simply [download the latest version of the website as a ZIP file](https://github.com/isellsoap/specificity-visualizer/archive/gh-pages.zip).
 
 ## License
 
