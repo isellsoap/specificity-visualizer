@@ -1,7 +1,6 @@
 import '../styles/main.scss';
 
 import naturalSort from 'javascript-natural-sort';
-import flatten from 'lodash/flatten';
 import uniq from 'lodash/uniq';
 import indexOf from 'lodash/indexOf';
 import postcss from 'postcss';
@@ -47,11 +46,11 @@ const getAllSelectors = () => {
 
   ast.walkRules((rule) => {
     if (isValidSelector(rule)) {
-      selectors.push(rule.selectors.filter((item) => item !== ''));
+      selectors.push(...rule.selectors.filter((item) => item !== ''));
     }
   });
 
-  return flatten(selectors).join();
+  return selectors.join();
 };
 
 const getSortedKeysByValue = (obj) => Object.keys(obj).sort((keyA, keyB) => -(obj[keyA] - obj[keyB]));
