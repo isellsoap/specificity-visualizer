@@ -4,7 +4,7 @@ import naturalSort from 'javascript-natural-sort';
 import uniq from 'lodash/uniq';
 import indexOf from 'lodash/indexOf';
 import postcss from 'postcss';
-import specificity from 'specificity';
+import {calculate} from 'specificity';
 
 import {
   renderMainChart,
@@ -88,7 +88,7 @@ elementForm.addEventListener('submit', (event) => {
   elementErrorMessage.classList.add(classFormErrorHidden);
 
   // calculate data for main chart
-  specificities = specificity.calculate(getAllSelectors());
+  specificities = calculate(getAllSelectors());
   mainChartYAxisCategories = uniq(
     specificities.map((element) => removeInlineStyleCategory(element.specificity))
   ).sort(naturalSort);
