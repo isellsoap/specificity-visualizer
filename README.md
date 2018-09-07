@@ -40,9 +40,16 @@ Pull requests go into the `master` branch. The `gh-pages` branch is a presentati
 `npm install`
 - Build all the assets once with
 `npm run build`
-or watch the files continuously with
-`npm run watch`
+
+OR simply execute the previously mentioned tasks by running
+`npm start`
+
 - This will create the `index.html` in the `dist` folder which you can now open in your browser.
+
+#### During Development
+
+- Watch the files continuously with
+`npm run watch`
 
 ## Download
 
