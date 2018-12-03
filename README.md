@@ -5,7 +5,7 @@
 A visual way to analyze the specificity of selectors in CSS.
 
 - [Website](https://isellsoap.github.io/specificity-visualizer/)
-- [Introductory blog post](https://francescoschwarz.de/en/blog/introducing-the-specificity-visualizer/)
+- [Introductory blog post](https://francescoschwarz.com/blog/introducing-the-specificity-visualizer/)
 - [Features](#features)
 - [Contributing](#contributing)
 - [Download](#download)
