@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Specificity Visualizer</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://isellsoap.github.io/specificity-visualizer/">
+    <script>
+      // The following scripts are inline because they need to get executed as
+      // fast as possible by the browser.
+
+      // Immediately add the webfont class if Noto Sans has already been
+      // loaded.
+      (function() {
+        if (sessionStorage.robotoMonoLoaded) {
+          document.documentElement.classList.add('wf-active');
+        }
+      })();
+
+      // Substitute the `o-Js-is-disabled` with the `o-Js-is-enabled` class on the `html` element.
+      (function(H){H.className=H.className.replace(/\bno-js\b/, 'js')})(document.documentElement)
+    </script>
+    <script src="scripts/webfontloader.4978d7ca2daef54fb049.js" async></script>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i">
+    </noscript>
+    <link rel="stylesheet" href="styles/main.6465116eb62d0d847770.css">
+  </head>
+  <body>
+    <header role="banner" class="header content-block content-block_highlighted content-block_narrow">
+      <div class="wrapper">
+        <h1 class="header__title">📈 Specificity Visualizer</h1>
+        <p class="header__text">A visual way to analyze the specificity of selectors in <abbr>CSS</abbr>.</p>
+        <ul class="header__list">
+          <li class="header__list-item"><a href="https://github.com/isellsoap/specificity-visualizer">GitHub</a></li>
+          <li class="header__list-item"><a href="https://francescoschwarz.com/blog/introducing-the-specificity-visualizer/">Blog post</a></li>
+        </ul>
+      </div>
+    </header>
+    <main role="main">
+      <section class="content-block content-block_narrow">
+        <div class="wrapper">
+          <form action="./" accept-charset="utf-8" class="form js-form">
+            <h2 class="content-block__title content-block__title_label"><label for="form-textarea"><span class="content-block__index-pointing-down">👇</span> Paste your CSS here</label></h2>
+            <textarea id="form-textarea" class="form__textarea js-form-textarea" placeholder="Yep, right here." required></textarea>
+            <div class="form__button-group">
+              <button class="form__button">Visualize it!</button>
+              <p class="form__error form__error_hidden js-form-error">💥 Please make sure to paste in valid <abbr>CSS</abbr>.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="charts charts_hidden js-charts">
+        <div class="wrapper wrapper_charts">
+          <div class="charts__wrapper">
+            <div class="charts__main-scatter-plot" id="js-specificity-graph"></div>
+            <div class="charts__specificity-groups-column" id="js-specificity-groups-column"></div>
+            <div class="charts__specificity-groups-pie" id="js-specificity-groups-pie"></div>
+          </div>
+        </div>
+      </section>
+      <section class="content-block content-block_highlighted" id="about-this-tool">
+        <div class="wrapper">
+          <h2 class="content-block__title">🌟 About this tool</h2>
+          <p class="content-block__text">With the above tool you get a quick overview of selectors and their specificities across a <abbr>CSS</abbr> file in bird’s-eye view.</p>
+          <p class="content-block__text">It’s a visual way to identify potentially problematic patterns and especially useful for analyzing very big and complex stylesheets.</p>
+          <p class="content-block__text">Be sure to read the <a href="https://francescoschwarz.com/blog/introducing-the-specificity-visualizer/">blog post introducing the <cite>Specificity Visualizer</cite></a>.</p>
+          <h3 class="content-block__subtitle">Main features and differences to other tools</h3>
+          <ul class="content-block__list">
+            <li>🤩 It’s a pretty fun and nice visual experience and potentially changes the way how you look into and think about your stylesheets.</li>
+            <li>🔍 Hover over single data points to see the exact selector or zoom into areas of interest, e.g. you can look at only the selectors of the first half of the file or you can zoom into all selectors with the specificity of <code>0,2,1</code> across the entire file.</li>
+            <li>📊 To better distinguish different specificity categories the data points are using proper colors and forms. You can also click on a legend item to toggle its visibility, e.g. if you want to only see <abbr>ID</abbr> selectors.</li>
+            <li>📸️ Taking screenshots of the chart is great to track progress, e.g. you could save a snapshot of your stylesheet before and after a major refactoring to visualize the difference. Also, you could use it for presentations to effectively communicate to other developers and/or stakeholders.</li>
+            <li>📏 Specificities aren’t simply “added up” but rather treated as proper categories. After all, no amount of class selectors can overrule an <abbr>ID</abbr> selector. Also, selectors inside of <code>@media</code>, <code>@supports</code> and <code>@document</code> blocks are counted, selectors inside of <code>@keyframes</code> blocks aren’t.</li>
+          </ul>
+          <h3 class="content-block__subtitle">How to read the chart</h3>
+          <ul class="content-block__list">
+            <li>The x-axis shows the physical location of selectors as they are written in the <abbr>CSS</abbr>. On the left side is the first one, on the right side the last one.</li>
+            <li>The y-axis shows the specificity of selectors, beginning with the least specific one at the bottom and ending with the most specific one at the top.</li>
+          </ul>
+          <h3 class="content-block__subtitle">What is considered a “good” or “bad” graph?</h3>
+          <ul class="content-block__list">
+            <li>First off, think of the chart more as a rough conceptual model and not as an exact tool.</li>
+            <li>A spiky graph with an overall high specificity and high amount of noise can be considered as potentially “bad”.</li>
+            <li>An upward-trending graph with overall low specificity and low amount of noise can be considered potentially “good”.</li>
+          </ul>
+          <p class="content-block__text">Please be sure to read the <a href="#additional-articles-on-this-topic">additional articles on this topic</a>.</p>
+        </div>
+      </section>
+
+      <section class="content-block" id="additional-articles-on-this-topic">
+        <div class="wrapper">
+          <h2 class="content-block__title">🤓 Additional articles on this topic</h2>
+          <p class="content-block__text">Check out these resources if you want to dig deeper into how specificity graphs can help you getting an overview of big stylesheets and what the reasoning behind it is:</p>
+          <ul class="content-block__list">
+            <li>If you are not sure what specificity in <abbr>CSS</abbr> is all about, be sure to read the following articles: <a href="https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/"><cite><abbr>CSS</abbr> Specificity: Things You Should Know</cite></a> by Vitaly Friedman, and <a href="https://www.smashingmagazine.com/2010/04/css-specificity-and-inheritance/"><cite><abbr>CSS</abbr> Specificity And Inheritance</cite></a> by Inayaili de León.</li>
+            <li><a href="https://csswizardry.com/2014/10/the-specificity-graph/"><cite>The Specificity Graph</cite></a> by Harry Roberts</li>
+            <li><a href="https://snook.ca/archives/html_and_css/specificity-graphs"><cite>Specificity Graphs</cite></a> by Jonathan Snook</li>
+            <li><a href="https://decadecity.net/blog/2014/11/26/css-specificity-graphs"><cite><abbr>CSS</abbr> specificity graphs in practice</cite></a> by Orde Saunders</li>
+          </ul>
+          <p class="content-block__text">Do you know of any other articles that are missing here? <a href="#contributing">Feel free to suggest one!</a></p>
+        </div>
+      </section>
+      <section class="content-block content-block_highlighted">
+        <div class="wrapper">
+          <h2 class="content-block__title">🔨 Other tools you might find useful</h2>
+          <p class="content-block__text">There are a ton of other tools out there that can help you analyzing your <abbr>CSS</abbr> and the specificity of your selectors:</p>
+          <ul class="content-block__list">
+            <li><a href="http://cssstats.com/"><cite><abbr>CSS</abbr> Stats</cite></a> by Adam Morse, Brent Jackson, and John Otander</li>
+            <li><a href="http://graphmycss.com/"><cite>Graph My <abbr>CSS</abbr></cite></a> by Jared Wilcurt</li>
+            <li><a href="https://jonassebastianohlsson.com/specificity-graph/"><cite><abbr>CSS</abbr> Specificity Graph Generator</cite></a> by Jonas Ohlsson</li>
+            <li><a href="https://github.com/springload/css-reporter"><cite><abbr>CSS</abbr> Reporter</cite></a> by Josh Barr</li>
+            <li><a href="https://github.com/katiefenn/parker"><cite>Parker</cite></a> by Katie Fenn</li>
+            <li><a href="https://decadecity.net/sprue/css-specificity-graph"><cite><abbr>CSS</abbr> specificity graph generator</cite></a> by Orde Saunders</li>
+            <li><a href="https://github.com/tomgenoni/cssdig-chrome"><cite><abbr>CSS</abbr> Dig</cite></a> by Tom Genoni</li>
+            <li><a href="https://specificity.keegan.st/"><cite>Specificity Calculator</cite></a> by Keegan Street</li>
+          </ul>
+          <p class="content-block__text">Do you know of any other tools that are missing here? <a href="#contributing">Feel free to suggest one!</a></p>
+        </div>
+      </section>
+      <section class="content-block" id="contributing">
+        <div class="wrapper">
+          <h2 class="content-block__title">💕 Contributing</h2>
+          <p class="content-block__text">Did you spot an error? Do you miss a feature? Please be sure to check out <a href="https://github.com/isellsoap/specificity-visualizer/issues">the list of existing issues</a> before creating <a href="https://github.com/isellsoap/specificity-visualizer/issues/new">one of your own</a>. Any feedback and help is appreciated.</p>
+        </div>
+      </section>
+      <section class="content-block content-block_highlighted">
+        <div class="wrapper">
+          <h2 class="content-block__title">🤝 Credits and further links</h2>
+          <ul class="content-block__list">
+            <li>Read the blog post <a href="https://francescoschwarz.com/blog/introducing-the-specificity-visualizer/">introducing the <cite>Specificity Visualizer</cite></a>.</li>
+            <li>Check out the <a href="https://github.com/isellsoap/specificity-visualizer">GitHub repository</a>.</li>
+            <li><a href="https://github.com/isellsoap/specificity-visualizer/archive/gh-pages.zip">Download this page</a> as a <abbr>ZIP</abbr> file.</li>
+            <li>Created by <a href="https://twitter.com/isellsoap">Francesco Schwarz</a>.</li>
+            <li>Many thanks to <a href="https://csswizardry.com/">Harry Roberts</a> for coming up with the concept of the specificity graph.</li>
+            <li>Charts are powered by <a href="https://www.highcharts.com/">Highcharts</a> under the <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 license</a>.</li>
+            <li>The type face in use is <a href="https://fonts.google.com/specimen/Roboto+Mono">Roboto Mono</a> by Christian Robertson.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="content-block">
+        <div class="wrapper">
+          <h2 class="content-block__title">📖 License</h2>
+          <p class="content-block__text">This repository is published under the <a href="https://github.com/isellsoap/specificity-visualizer/LICENSE.md"><abbr>MIT</abbr> license</a>.</p>
+        </div>
+      </section>
+    </main>
+    <script src="scripts/main.aef9c155d59bf74d015e.js"></script>
+  </body>
+</html>
