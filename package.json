@@ -22,7 +22,7 @@
   "dependencies": {
     "highcharts": "6.1.2",
     "javascript-natural-sort": "0.7.1",
-    "lodash": "4.17.10",
+    "lodash": "4.17.19",
     "normalize.css": "8.0.0",
     "parsel-js": "^1.0.1",
     "webfontloader": "1.6.28"
