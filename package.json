@@ -20,7 +20,7 @@
     "start": "yarn && cross-env NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
-    "highcharts": "6.1.2",
+    "highcharts": "9.0.0",
     "javascript-natural-sort": "0.7.1",
     "lodash": "4.17.10",
     "normalize.css": "8.0.0",
