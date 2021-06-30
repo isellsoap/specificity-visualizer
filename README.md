@@ -5,14 +5,14 @@
 A visual way to analyze the specificity of selectors in CSS.
 
 - [Website](https://isellsoap.github.io/specificity-visualizer/)
-- [Introductory blog post](https://francescoschwarz.com/blog/introducing-the-specificity-visualizer/)
+- [Introductory blog post](https://francescoschwarz.com/articles/introducing-the-specificity-visualizer/)
 - [Features](#features)
 - [Contributing](#contributing)
 - [Download](#download)
 
 ---
 
-The *Specificity Visualizer* enables you to identify patterns, trends and inconsistencies across a CSS file in bird’s-eye view. It’s especially useful for analyzing big and complex stylesheets. The underlying concept of the [specificity graph](https://csswizardry.com/2014/10/the-specificity-graph/) has been coined by Harry Roberts.
+The _Specificity Visualizer_ enables you to identify patterns, trends and inconsistencies across a CSS file in bird’s-eye view. It’s especially useful for analyzing big and complex stylesheets. The underlying concept of the [specificity graph](https://csswizardry.com/2014/10/the-specificity-graph/) has been coined by Harry Roberts.
 
 ## Features
 
@@ -28,11 +28,11 @@ Pull requests go into the `master` branch. The `gh-pages` branch is a presentati
 
 ### Prerequisites
 
-- You must have [**Node.js**](https://nodejs.org/) and [**Yarn**](https://yarnpkg.com/lang/en/) installed to run the *Specificity Visualizer* locally.
+- You must have [**Node.js**](https://nodejs.org/) and [**Yarn**](https://yarnpkg.com/lang/en/) installed to run the _Specificity Visualizer_ locally.
 - Clone the repository with
-`git clone https://github.com/isellsoap/specificity-visualizer.git`
+  `git clone https://github.com/isellsoap/specificity-visualizer.git`
 - Go into the folder with
-`cd specificity-visualizer`
+  `cd specificity-visualizer`
 
 ### Developing
 
