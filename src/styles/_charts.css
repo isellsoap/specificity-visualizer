@@ -1,0 +1,43 @@
+
+.charts_hidden {
+  display: none;
+}
+
+.charts__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.charts__main-scatter-plot,
+.charts__specificity-groups-column,
+.charts__specificity-groups-pie {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.charts__main-scatter-plot {
+  height: 80vh;
+}
+
+@media (--viewport-breakpoint-3) {
+  .charts__specificity-groups-column {
+    padding-right: .5rem;
+    width: 50%;
+  }
+
+  .charts__specificity-groups-pie {
+    padding-left: .5rem;
+    width: 50%;
+  }
+}
+
+@media (--viewport-breakpoint-4) {
+  .charts__specificity-groups-column {
+    width: 66.66667%;
+  }
+
+  .charts__specificity-groups-pie {
+    width: 33.33333%;
+  }
+}
+

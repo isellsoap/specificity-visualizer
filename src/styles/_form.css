@@ -1,0 +1,75 @@
+
+.form__textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 10rem;
+  margin-bottom: .5rem;
+  padding: .75rem;
+  resize: none;
+  transition: border-color 100ms ease-in;
+  width: 100%;
+}
+
+.form__textarea::placeholder {
+  color: #888;
+}
+
+.form__textarea:focus,
+.form__textarea:hover {
+  border-color: #999;
+}
+
+.form__button-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__button {
+  background-color: #639;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  padding: 1rem 2rem;
+  transition: background-color 100ms ease-in;
+}
+
+.form__button :focus,
+.form__button :hover {
+  background-color: #592d86;
+}
+
+.form__error {
+  flex-grow: 1;
+}
+
+.form__error_hidden {
+  display: none;
+}
+
+@media (--viewport-breakpoint-1) {
+  .form__button-group {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .form__button {
+    margin-bottom: 0;
+  }
+
+  .form__error {
+    margin-left: 1rem;
+    text-align: right;
+  }
+}
+
+@media (--viewport-breakpoint-2) {
+  .form__button {
+    font-size: 1.25rem;
+  }
+}
+

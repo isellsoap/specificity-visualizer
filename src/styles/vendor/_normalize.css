@@ -1,0 +1,11 @@
+@import '../../../node_modules/normalize.css/normalize.css';
+
+/* override unfortunate normalize.css rules */
+h1,
+small {
+  font-size: 100%;
+}
+
+h1 {
+  margin: 0;
+}

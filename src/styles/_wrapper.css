@@ -2,8 +2,8 @@
   margin: 0 auto;
   max-width: 50rem;
   padding: 0 1rem;
+}
 
-  &_charts {
-    max-width: 180rem;
-  }
+.wrapper_charts {
+  max-width: 180rem;
 }

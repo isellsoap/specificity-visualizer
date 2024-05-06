@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">= 8.11.4",
+    "node": "10",
     "yarn": ">= 1.9.4"
   },
   "browserslist": [
@@ -17,8 +17,6 @@
   ],
   "scripts": {
     "build": "yarn && cross-env NODE_ENV=production webpack",
-    "normalize-to-sass": "cp node_modules/normalize.css/normalize.css src/styles/vendor/_normalize.scss",
-    "postinstall": "yarn normalize-to-sass",
     "start": "yarn && cross-env NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
@@ -26,7 +24,7 @@
     "javascript-natural-sort": "0.7.1",
     "lodash": "4.17.10",
     "normalize.css": "8.0.0",
-    "specificity": "0.4.1",
+    "parsel-js": "^1.0.1",
     "webfontloader": "1.6.28"
   },
   "devDependencies": {
@@ -38,20 +36,22 @@
     "clean-webpack-plugin": "0.1.19",
     "cross-env": "^5.2.0",
     "css-loader": "1.0.0",
-    "eslint": "5.5.0",
-    "eslint-loader": "2.1.0",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.4.2",
-    "node-sass": "4.9.3",
-    "postcss": "7.0.2",
-    "postcss-loader": "3.0.0",
-    "postcss-sass": "0.3.3",
-    "sass-loader": "7.1.0",
+    "postcss": "^8.2.8",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-custom-properties": "^11.0.0",
+    "postcss-hexrgba": "^2.0.1",
+    "postcss-import": "^14.0.0",
+    "postcss-loader": "4.x",
+    "postcss-mixins": "^7.0.3",
+    "prettier": "^2.2.1",
     "style-loader": "0.23.0",
     "stylelint": "9.5.0",
     "stylelint-config-standard": "18.2.0",
     "stylelint-order": "1.0.0",
     "stylelint-webpack-plugin": "0.10.5",
+    "terser-webpack-plugin": "^4.x",
     "ts-node": "7.0.1",
     "typescript": "3.0.3",
     "webpack": "4.17.2",

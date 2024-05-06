@@ -1,0 +1,6 @@
+@custom-media --viewport-breakpoint-1 screen and (min-width: 28.125em);
+@custom-media --viewport-breakpoint-2 screen and (min-width: 43.75em);
+@custom-media --viewport-breakpoint-3 screen and (min-width: 53.125em);
+@custom-media --viewport-breakpoint-4 screen and (min-width: 87.5em);
+@custom-media --viewport-breakpoint-5 screen and (min-width: 125em);
+@custom-media --viewport-breakpoint-6 screen and (min-width: 156.25em);
